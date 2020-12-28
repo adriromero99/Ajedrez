@@ -34,7 +34,7 @@ public class Reina : TipoPieza {
 
 			if (j < nuevaPosicion.obtenerY()) {
 				j++;
-			} else if (i > nuevaPosicion.obtenerY()) {
+			} else if (j > nuevaPosicion.obtenerY()) {
 				j--;
 			}
 

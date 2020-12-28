@@ -11,6 +11,7 @@ public class ManejadorDeClicks {
     Posicion posicionFinal;
     bool hayPosicionInicial;
     PiezaVista piezaVistaAnterior;
+    PiezaVista piezaVistaActual;
     public ManejadorDeClicks(Tablero tablero) {
         this.tablero = tablero;
         posicionInicial = new Posicion(0, 0);
@@ -20,32 +21,60 @@ public class ManejadorDeClicks {
     }
     public void manejar(Posicion posicionClickeada) {
 
-        bool laPosicionClickeadaEstaVacia = tablero.piezaEn(posicionClickeada).obtenerColor() != "";
+        bool laPosicionClickeadaEstaVacia = tablero.piezaEn(posicionClickeada).obtenerColor() == "";
 
-        if (!hayPosicionInicial && laPosicionClickeadaEstaVacia) {
+       
+
+        if (!hayPosicionInicial && !laPosicionClickeadaEstaVacia) {
             posicionInicial = posicionClickeada;
             hayPosicionInicial = true;
+
+            if (piezaVistaAnterior != null) {
+                piezaVistaAnterior.desresaltarPiezaBox();
+            }
+
         } else {
             posicionFinal = posicionClickeada;
+
+
+
             if (tablero.moverPieza(posicionInicial, posicionFinal)) {
                 hayPosicionInicial = false;
 
-              
-            } else if (laPosicionClickeadaEstaVacia) {
-                //hayPosicionInicial = true;
+                if (piezaVistaAnterior != null) {
+                    piezaVistaAnterior.desresaltarPiezaBox();
+                }
+
+                tablero.actualizar();
+            } else if (!laPosicionClickeadaEstaVacia) {
+
+                hayPosicionInicial = true;
                 posicionInicial = posicionClickeada;
-            }
+
+                if (piezaVistaAnterior != null) {
+                    piezaVistaAnterior.desresaltarPiezaBox();
+                }
+
+            } 
 
         }
     }
 
     public void manejar(Posicion posicionClickeada, PiezaVista piezaVista) {
-        if (piezaVistaAnterior != null) {
-            piezaVistaAnterior.desresaltarPiezaBox();
-        }
-        piezaVistaAnterior = piezaVista;
-        manejar(posicionClickeada);
+
+        bool laPosicionClickeadaEstaVacia = tablero.piezaEn(posicionClickeada).obtenerColor() == "";
+
+        piezaVistaActual = piezaVista;
+        
         piezaVista.resaltarPiezaBox();
+
+        manejar(posicionClickeada);
+
+        if (!laPosicionClickeadaEstaVacia) {
+            piezaVistaAnterior = piezaVista;
+        }
+
+      
     }
 
 }

@@ -40,5 +40,12 @@ public class Peon : TipoPieza {
     public override string obtenerRutaImagen() {
         return @"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\peon";
     }
+
+    public override void actualizar(Pieza pieza) {
+        if (pieza.obtenerY() == 0 || pieza.obtenerY() == 7) {
+            pieza.coronar();
+        }
+    }
+
 }
 

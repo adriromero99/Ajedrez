@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
-
+using System.IO;
 
 public class PiezaVista {
 
@@ -16,7 +16,15 @@ public class PiezaVista {
     public PiezaVista(Pieza pieza) {
         this.pieza = pieza;
         piezaBox = new PictureBox();
-        piezaBox.Image = Image.FromFile(pieza.obtenerRutaImagen()); 
+        string ruta = pieza.obtenerRutaImagen();
+
+        using (FileStream fs = new FileStream(ruta, FileMode.Open, FileAccess.Read)) {
+            using (Image original = Image.FromStream(fs)) { }
+            piezaBox.Image = Image.FromStream(fs);
+        }
+
+        
+                
         piezaBox.SizeMode = PictureBoxSizeMode.StretchImage;
         piezaBox.Visible = true;
         piezaBox.Width = 90;
@@ -65,10 +73,10 @@ public class PiezaVista {
         piezaBox.Location = new Point(posicion.obtenerX() * 90, 630 - posicion.obtenerY() * 90);
     }
 
-    public void serNulo() {
+    public void coronar() {
         piezaBox.Image = Image.FromFile(pieza.obtenerRutaImagen());
+        piezaBox.Refresh();
     }
-
 
 }
 

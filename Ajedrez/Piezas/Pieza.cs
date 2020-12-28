@@ -35,12 +35,14 @@ public class Pieza {
 
 	public bool mover(Posicion nuevaPosicion, Tablero tablero) {
 		bool sePuedeMover = tipoPieza.esValidaLaNuevaPosicion(this, nuevaPosicion, tablero);
+		bool seEfectuoElMovimiento = false;
 
 		if (sePuedeMover && tablero.turnero.esElTurnoCorrespondiente(color)) {
-			efectuarMovimiento(nuevaPosicion, tablero);	
+			efectuarMovimiento(nuevaPosicion, tablero);
+			seEfectuoElMovimiento = true;
 		}
 
-		return sePuedeMover && tablero.turnero.esElTurnoCorrespondiente(color);
+		return seEfectuoElMovimiento;
 	}
 
 	public void efectuarMovimiento(Posicion nuevaPosicion, Tablero tablero) {
@@ -68,6 +70,16 @@ public class Pieza {
 	public int obtenerY() {
 		return this.posicion.obtenerY();
 	}
+
+	public void actualizar() {
+		this.tipoPieza.actualizar(this);	
+	}
+
+	public void coronar() {
+		this.tipoPieza = new Reina();
+		this.piezaVista.coronar();
+    }
+
 
 
 }

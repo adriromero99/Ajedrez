@@ -82,6 +82,12 @@ public class Tablero {
         }
     }
 
+    public void actualizar() {
+        foreach (Pieza pieza in piezas) {
+            pieza.actualizar();
+        }
+    }
+
 }
 
 public class Casillero {
@@ -106,5 +112,7 @@ public class Casillero {
     public bool moverPieza(Posicion posicionNueva, Tablero tablero) {
         return pieza.mover(posicionNueva, tablero);
     }
+
+  
 
 }
