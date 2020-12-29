@@ -14,7 +14,7 @@ public class TableroVista {
     public TableroVista(ManejadorDeClicks manejadorDeClicks) {
         this.manejadorDeClicks = manejadorDeClicks;
         tableroBox = new PictureBox();
-        tableroBox.Image = Image.FromFile(@"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\tablero.png");
+        tableroBox.Image = Ajedrez.Properties.Resources.tablero;
         tableroBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tableroBox.Visible = true;
         tableroBox.Width = 90*8;

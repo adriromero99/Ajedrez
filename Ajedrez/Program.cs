@@ -9,14 +9,10 @@ using System.Diagnostics;
 namespace Ajedrez {
     class Program {
         [STAThread]
-        static void Main(string[] args) {
-    
-
-            Tablero tablero = new Tablero();
-            tablero.inicializarTablero();
+        static void Main(string[] args) { 
 
             Application.EnableVisualStyles();
-            Application.Run(new AjedrezWindow(tablero));
+            Application.Run(new AjedrezWindow());
 
         }
     }

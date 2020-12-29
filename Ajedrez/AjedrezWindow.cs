@@ -13,10 +13,11 @@ namespace Ajedrez {
 
         private Tablero tablero;
 
-        public AjedrezWindow(Tablero tablero) {
-            this.tablero = tablero;
+        public AjedrezWindow() {
+            this.tablero = new Tablero();
+            tablero.inicializarTablero();
             InitializeComponent();
-            }
+         }
 
         private void AjedrezWindow_Load(object sender, EventArgs e) {
             tablero.incializarVista(this);

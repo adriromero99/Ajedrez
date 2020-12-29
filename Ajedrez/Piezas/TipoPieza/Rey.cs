@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
 
 
 public class Rey : TipoPieza{
@@ -125,8 +124,11 @@ public class Rey : TipoPieza{
 
     }
 
-    public override string obtenerRutaImagen() {
-        return @"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\rey";
+    public override Bitmap obtenerImagen(Pieza pieza) {
+        if (pieza.obtenerColor() == "Blanco") {
+            return new Bitmap(Ajedrez.Properties.Resources.reyBlanco);
+        }
+        return new Bitmap(Ajedrez.Properties.Resources.reyNegro);
     }
 }
 

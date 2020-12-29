@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
 
 
 public class Peon : TipoPieza {
@@ -37,8 +36,11 @@ public class Peon : TipoPieza {
         return esXValido && esYValido && (pieza.obtenerColor() != tablero.piezaEn(nuevaPosicion).obtenerColor());
     }
 
-    public override string obtenerRutaImagen() {
-        return @"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\peon";
+    public override Bitmap obtenerImagen(Pieza pieza) {
+        if (pieza.obtenerColor() == "Blanco") {
+            return new Bitmap(Ajedrez.Properties.Resources.peonBlanco);
+        }
+        return new Bitmap(Ajedrez.Properties.Resources.peonNegro);
     }
 
     public override void actualizar(Pieza pieza, Tablero tablero) {

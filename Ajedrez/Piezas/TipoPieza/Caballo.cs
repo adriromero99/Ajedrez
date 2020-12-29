@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
 
 
 public class Caballo : TipoPieza {
@@ -25,8 +24,11 @@ public class Caballo : TipoPieza {
         return esUnMovimientoValido && (pieza.obtenerColor() != tablero.piezaEn(nuevaPosicion).obtenerColor());
     }
 
-    public override string obtenerRutaImagen() {
-        return @"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\caballo";
+    public override Bitmap obtenerImagen(Pieza pieza) {
+        if (pieza.obtenerColor() == "Blanco") {
+            return new Bitmap(Ajedrez.Properties.Resources.caballoBlanco);
+        }
+        return new Bitmap(Ajedrez.Properties.Resources.caballoNegro);
     }
 
 }

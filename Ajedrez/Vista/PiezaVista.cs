@@ -16,15 +16,7 @@ public class PiezaVista {
     public PiezaVista(Pieza pieza) {
         this.pieza = pieza;
         piezaBox = new PictureBox();
-        string ruta = pieza.obtenerRutaImagen();
-
-        using (FileStream fs = new FileStream(ruta, FileMode.Open, FileAccess.Read)) {
-            using (Image original = Image.FromStream(fs)) { }
-            piezaBox.Image = Image.FromStream(fs);
-        }
-
         
-                
         piezaBox.SizeMode = PictureBoxSizeMode.StretchImage;
         piezaBox.Visible = true;
         piezaBox.Width = 90;
@@ -66,6 +58,7 @@ public class PiezaVista {
     }
     public void inicializarVista(TableroVista tableroVista, ManejadorDeClicks manejadorDeClicks) {
         this.manejadorDeClicks = manejadorDeClicks;
+        piezaBox.Image = pieza.obtenerImagen();
         tableroVista.agregarPiezaBox(piezaBox);
     }
 
@@ -74,7 +67,8 @@ public class PiezaVista {
     }
 
     public void coronar() {
-        piezaBox.Image = Image.FromFile(pieza.obtenerRutaImagen());
+        piezaBox.Image = null;
+        piezaBox.Image = pieza.obtenerImagen(); 
         piezaBox.Refresh();
     }
 

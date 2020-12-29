@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
 
-
-class Alfil : TipoPieza{
+public class Alfil : TipoPieza{
 	public override bool esValidaLaNuevaPosicion(Pieza pieza, Posicion nuevaPosicion, Tablero tablero) {
 
 		bool esValidaLaNuevaPosicion = false;
@@ -50,8 +48,11 @@ class Alfil : TipoPieza{
 		return seEncontroUnaPiezaEnElCamino || laPiezaEnLaNuevaPosicionEsDelMismoColor;
 	}
 
-	public override string obtenerRutaImagen() { 
-		return @"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\alfil";
+	public override Bitmap obtenerImagen(Pieza pieza) {
+		if (pieza.obtenerColor() == "Blanco") {
+			return new Bitmap(Ajedrez.Properties.Resources.alfilBlanco);
+		}
+		return new Bitmap(Ajedrez.Properties.Resources.alfilNegro);
 	}
 
 

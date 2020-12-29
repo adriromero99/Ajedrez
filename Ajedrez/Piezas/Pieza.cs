@@ -29,8 +29,8 @@ public class Pieza {
 		return !estaEnPosicionInicial;
 	}
 
-	public string obtenerRutaImagen(){
-		return this.tipoPieza.obtenerRutaImagen()+color+".png"; 
+	public Bitmap obtenerImagen(){
+		return this.tipoPieza.obtenerImagen(this); 
 	}
 
 	public bool mover(Posicion nuevaPosicion, Tablero tablero) {

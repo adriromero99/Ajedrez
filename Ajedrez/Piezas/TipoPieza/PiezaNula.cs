@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
 
 
 class PiezaNula : TipoPieza {
@@ -8,8 +7,8 @@ class PiezaNula : TipoPieza {
         return false;
     }
 
-    public override string obtenerRutaImagen() {
-        return @"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\piezaNula";
-    }
+	public override Bitmap obtenerImagen(Pieza pieza) {
+		return new Bitmap(Ajedrez.Properties.Resources.piezaNula);
+	}
 }
 

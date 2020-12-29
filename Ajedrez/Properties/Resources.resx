@@ -117,4 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="alfilBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\alfilBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alfilNegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\alfilNegro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="caballoBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\caballoBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="caballoNegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\caballoNegro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="peonBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\peonBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="peonNegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\peonNegro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="piezaNula" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\piezaNula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reinaBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\reinaBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reinaNegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\reinaNegro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reyBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\reyBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reyNegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\reyNegro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tablero" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\tablero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="torreBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\torreBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="torreNegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\torreNegro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

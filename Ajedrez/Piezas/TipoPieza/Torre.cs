@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Drawing;
 
 public class Torre : TipoPieza{
 	public override bool esValidaLaNuevaPosicion(Pieza pieza, Posicion nuevaPosicion, Tablero tablero) {
@@ -70,8 +70,11 @@ public class Torre : TipoPieza{
 		return seEncontroUnaPiezaEnElCamino || laPiezaEnLaNuevaPosicionEsDelMismoColor;
 	}
 
-	public override string obtenerRutaImagen() {
-		return @"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\torre";
+	public override Bitmap obtenerImagen(Pieza pieza) {
+		if (pieza.obtenerColor() == "Blanco") {
+			return new Bitmap(Ajedrez.Properties.Resources.torreBlanco);
+		} 
+		return new Bitmap(Ajedrez.Properties.Resources.torreNegro);
 	}
 
 }

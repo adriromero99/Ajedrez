@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Drawing;
 public class ManejadorDeCoronacion {
 
-    Form ajedrezWindow;
     Button botonCaballo;
     Button botonTorre;
     Button botonAlfil;
@@ -16,7 +10,6 @@ public class ManejadorDeCoronacion {
 
     Pieza piezaACoronar;
     public ManejadorDeCoronacion(Form ajedrezWindow) {
-        this.ajedrezWindow = ajedrezWindow;
 
         botonCaballo = new Button();
         botonCaballo.Visible = false;
@@ -100,11 +93,17 @@ public class ManejadorDeCoronacion {
 
     private void cargarImagenesDeBotones(string color) {
 
-        botonTorre.BackgroundImage = Image.FromFile(@"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\torre"+color+".png");
-        botonAlfil.BackgroundImage = Image.FromFile(@"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\alfil"+color+".png");
-        botonCaballo.BackgroundImage = Image.FromFile(@"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\caballo"+color+".png");
-        botonReina.BackgroundImage = Image.FromFile(@"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\reina"+color+".png");
-
+        if (color == "Blanco") {
+            botonTorre.BackgroundImage = Ajedrez.Properties.Resources.torreBlanco;
+            botonAlfil.BackgroundImage = Ajedrez.Properties.Resources.alfilBlanco;
+            botonCaballo.BackgroundImage = Ajedrez.Properties.Resources.caballoBlanco;
+            botonReina.BackgroundImage = Ajedrez.Properties.Resources.reinaBlanco;
+        } else if (color == "Negro") {
+            botonTorre.BackgroundImage = Ajedrez.Properties.Resources.torreNegro;
+            botonAlfil.BackgroundImage = Ajedrez.Properties.Resources.alfilNegro;
+            botonCaballo.BackgroundImage = Ajedrez.Properties.Resources.caballoNegro;
+            botonReina.BackgroundImage = Ajedrez.Properties.Resources.reinaNegro;
+        }
     }
 
 }

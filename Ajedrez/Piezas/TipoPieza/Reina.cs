@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
 
 public class Reina : TipoPieza {
     public override bool esValidaLaNuevaPosicion(Pieza pieza, Posicion nuevaPosicion, Tablero tablero) {
@@ -106,8 +105,11 @@ public class Reina : TipoPieza {
 		return seEncontroUnaPiezaEnElCamino || laPiezaEnLaNuevaPosicionEsDelMismoColor;
 	}
 
-	public override string obtenerRutaImagen() {
-		return @"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\reina";
+	public override Bitmap obtenerImagen(Pieza pieza) {
+		if (pieza.obtenerColor() == "Blanco") {
+			return new Bitmap(Ajedrez.Properties.Resources.reinaBlanco);
+		}
+		return new Bitmap(Ajedrez.Properties.Resources.reinaNegro);
 	}
 
 }

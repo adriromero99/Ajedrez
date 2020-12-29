@@ -119,5 +119,47 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\alfilBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\alfilNegro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\caballoBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\caballoNegro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\peonBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\peonNegro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\piezaNula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\reinaBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\reinaNegro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\reyBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\reyNegro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\tablero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\torreBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\torreNegro.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
