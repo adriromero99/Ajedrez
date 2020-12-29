@@ -22,29 +22,29 @@ public class ManejadorDeCoronacion {
         botonCaballo.Visible = false;
         botonCaballo.Location = new Point(270, 250);
         botonCaballo.Size = new Size(100, 100);
-        botonCaballo.Text = "Caballo";
         botonCaballo.Click += BotonCaballo_Click;
+        botonCaballo.BackgroundImageLayout = ImageLayout.Stretch;
 
         botonTorre = new Button();
         botonTorre.Visible = false;
         botonTorre.Location = new Point(370, 250);
         botonTorre.Size = new Size(100, 100);
-        botonTorre.Text = "Torre";
         botonTorre.Click += BotonTorre_Click;
+        botonTorre.BackgroundImageLayout = ImageLayout.Stretch;
 
         botonAlfil = new Button();
         botonAlfil.Visible = false;
         botonAlfil.Location = new Point(370, 350);
         botonAlfil.Size = new Size(100, 100);
-        botonAlfil.Text = "Alfil";
         botonAlfil.Click += BotonAlfil_Click;
+        botonAlfil.BackgroundImageLayout = ImageLayout.Stretch;
 
         botonReina = new Button();
         botonReina.Visible = false;
         botonReina.Location = new Point(270, 350);
         botonReina.Size = new Size(100, 100);
-        botonReina.Text = "Reina";
         botonReina.Click += BotonReina_Click;
+        botonReina.BackgroundImageLayout = ImageLayout.Stretch;
 
         ajedrezWindow.Controls.Add(botonCaballo);
         ajedrezWindow.Controls.Add(botonTorre);
@@ -79,6 +79,7 @@ public class ManejadorDeCoronacion {
     }
 
     public void coronar(Pieza piezaACoronar) {
+        cargarImagenesDeBotones(piezaACoronar.obtenerColor());
         revelarBotones();
         this.piezaACoronar = piezaACoronar;
     }
@@ -95,6 +96,15 @@ public class ManejadorDeCoronacion {
         botonAlfil.Visible = false;
         botonCaballo.Visible = false;
         botonReina.Visible = false;
+    }
+
+    private void cargarImagenesDeBotones(string color) {
+
+        botonTorre.BackgroundImage = Image.FromFile(@"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\torre"+color+".png");
+        botonAlfil.BackgroundImage = Image.FromFile(@"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\alfil"+color+".png");
+        botonCaballo.BackgroundImage = Image.FromFile(@"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\caballo"+color+".png");
+        botonReina.BackgroundImage = Image.FromFile(@"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\reina"+color+".png");
+
     }
 
 }
