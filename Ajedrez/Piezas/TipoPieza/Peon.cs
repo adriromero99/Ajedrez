@@ -41,9 +41,9 @@ public class Peon : TipoPieza {
         return @"C:\Users\Adrian\source\repos\Ajedrez\Ajedrez\Imagenes\peon";
     }
 
-    public override void actualizar(Pieza pieza) {
+    public override void actualizar(Pieza pieza, Tablero tablero) {
         if (pieza.obtenerY() == 0 || pieza.obtenerY() == 7) {
-            pieza.coronar();
+            tablero.coronar(pieza);
         }
     }
 

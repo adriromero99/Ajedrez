@@ -71,12 +71,12 @@ public class Pieza {
 		return this.posicion.obtenerY();
 	}
 
-	public void actualizar() {
-		this.tipoPieza.actualizar(this);	
+	public void actualizar(Tablero tablero) {
+		this.tipoPieza.actualizar(this, tablero);	
 	}
 
-	public void coronar() {
-		this.tipoPieza = new Reina();
+	public void coronar(TipoPieza tipoPieza) {
+		this.tipoPieza = tipoPieza;
 		this.piezaVista.coronar();
     }
 

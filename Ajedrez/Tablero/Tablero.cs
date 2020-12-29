@@ -12,6 +12,7 @@ public class Tablero {
     private TableroVista tableroVista;
     private List<Pieza> piezas = new List<Pieza>();
     public Turnero turnero = new Turnero();
+    ManejadorDeCoronacion manejadorDeCoronacion;
 
     public Tablero() {
         for (int i = 0; i < TAMANIO_TABLERO; i++) {
@@ -19,10 +20,13 @@ public class Tablero {
                 casillas[i, j] = new Casillero();
             }       
         }
+
+       
     }
 
     public void incializarVista(Form ajedrezWindow) {
         ajedrezWindow.Controls.Add(tableroVista.obtenerBox());
+        this.manejadorDeCoronacion = new ManejadorDeCoronacion(ajedrezWindow);
     }
 
     public void ubicarPieza(Pieza pieza) {
@@ -76,15 +80,21 @@ public class Tablero {
         ManejadorDeClicks manejadorDeClicks = new ManejadorDeClicks(this);
         this.tableroVista = new TableroVista(manejadorDeClicks);
 
+       
+
         foreach (Pieza pieza in piezas) {
             ubicarPieza(pieza);
             pieza.inicializarVista(tableroVista, manejadorDeClicks);
         }
     }
 
+    public void coronar(Pieza pieza) {
+        this.manejadorDeCoronacion.coronar(pieza);
+    }
+
     public void actualizar() {
         foreach (Pieza pieza in piezas) {
-            pieza.actualizar();
+            pieza.actualizar(this);
         }
     }
 

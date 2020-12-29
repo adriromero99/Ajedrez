@@ -71,6 +71,7 @@
     <Compile Include="AjedrezWindow.Designer.cs">
       <DependentUpon>AjedrezWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controlador\ManejadorDeCoronacion.cs" />
     <Compile Include="Controlador\ManejadorDeClicks.cs" />
     <Compile Include="Piezas\TipoPieza\Alfil.cs" />
     <Compile Include="Piezas\TipoPieza\Caballo.cs" />
